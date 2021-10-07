@@ -19,16 +19,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5G-EL-Cpf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zte-40-GIl">
-                                <rect key="frame" x="329" y="94" width="65" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Center">
-                                    <color key="titleColor" systemColor="linkColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="centerForMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mfy-gw-Pho"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO6-00-jSS">
                                 <rect key="frame" x="364" y="141" width="30" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -45,6 +35,16 @@
                                     <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KiW-o8-9Fk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zte-40-GIl">
+                                <rect key="frame" x="329" y="94" width="65" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Center">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerForMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mfy-gw-Pho"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,6 +56,7 @@
                             <constraint firstItem="zte-40-GIl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="LiQ-2X-R2d"/>
                             <constraint firstItem="JO6-00-jSS" firstAttribute="top" secondItem="zte-40-GIl" secondAttribute="bottom" constant="8" id="OTz-He-5I4"/>
                             <constraint firstItem="N5G-EL-Cpf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QSc-qe-3bu"/>
+                            <constraint firstItem="zte-40-GIl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="YGT-CY-ymm"/>
                             <constraint firstItem="QIQ-dk-C0E" firstAttribute="top" secondItem="JO6-00-jSS" secondAttribute="bottom" constant="5" id="bCq-6x-TOc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N5G-EL-Cpf" secondAttribute="bottom" id="glh-Ra-WAf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N5G-EL-Cpf" secondAttribute="trailing" id="n0b-sR-mCi"/>
@@ -70,28 +71,73 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="75.669642857142847"/>
         </scene>
-        <!--GoogleMaps-->
-        <scene sceneID="pN3-v8-Toj">
+        <!--Google Maps-->
+        <scene sceneID="zQX-fJ-q9n">
             <objects>
-                <viewController id="pAs-Rt-wxF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="idM-SF-Pbg">
+                <viewController id="aGF-uO-a8l" customClass="MapsViewController" customModule="hw_10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E3D-jn-kDD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICZ-kt-iua">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORH-7G-sn5" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCU-Qd-8rc">
+                                <rect key="frame" x="334" y="134" width="30" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="plus:" destination="aGF-uO-a8l" eventType="touchUpInside" id="0wx-0j-Tak"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vs-vB-4Zw">
+                                <rect key="frame" x="334" y="169" width="30" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="minus:" destination="aGF-uO-a8l" eventType="touchUpInside" id="ei7-ZV-oOL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLf-9a-2hF">
+                                <rect key="frame" x="299" y="94" width="65" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Center">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="center:" destination="aGF-uO-a8l" eventType="touchUpInside" id="xGE-bD-Ywh"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="DWh-Nh-n17"/>
+                        <viewLayoutGuide key="safeArea" id="1vk-DP-loc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pLf-9a-2hF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1vk-DP-loc" secondAttribute="leading" symbolic="YES" id="3j5-h5-AV1"/>
+                            <constraint firstItem="ORH-7G-sn5" firstAttribute="leading" secondItem="1vk-DP-loc" secondAttribute="leading" id="GVe-WH-QZi"/>
+                            <constraint firstItem="1vk-DP-loc" firstAttribute="trailing" secondItem="ORH-7G-sn5" secondAttribute="trailing" id="JkL-9v-mAi"/>
+                            <constraint firstItem="1vk-DP-loc" firstAttribute="bottom" secondItem="ORH-7G-sn5" secondAttribute="bottom" id="KPc-pj-URa"/>
+                            <constraint firstItem="ORH-7G-sn5" firstAttribute="top" secondItem="1vk-DP-loc" secondAttribute="top" id="PuX-ZI-x8v"/>
+                            <constraint firstItem="pLf-9a-2hF" firstAttribute="top" secondItem="1vk-DP-loc" secondAttribute="top" constant="50" id="Sxe-eb-VEk"/>
+                            <constraint firstItem="1vk-DP-loc" firstAttribute="trailing" secondItem="2vs-vB-4Zw" secondAttribute="trailing" constant="50" id="aPk-fK-Qza"/>
+                            <constraint firstItem="1vk-DP-loc" firstAttribute="trailing" secondItem="pLf-9a-2hF" secondAttribute="trailing" constant="50" id="ihh-tF-eCs"/>
+                            <constraint firstItem="zCU-Qd-8rc" firstAttribute="top" secondItem="1vk-DP-loc" secondAttribute="top" constant="90" id="iqV-ua-Kwj"/>
+                            <constraint firstItem="1vk-DP-loc" firstAttribute="trailing" secondItem="zCU-Qd-8rc" secondAttribute="trailing" constant="50" id="q0b-Uv-boF"/>
+                            <constraint firstItem="2vs-vB-4Zw" firstAttribute="top" secondItem="1vk-DP-loc" secondAttribute="top" constant="125" id="z4R-bz-heg"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="GoogleMaps" id="774-ne-SCA"/>
+                    <tabBarItem key="tabBarItem" title="Google Maps" id="JnR-QZ-0yh"/>
+                    <connections>
+                        <outlet property="mapView" destination="ORH-7G-sn5" id="Y6r-nb-0DP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ6-pM-peP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ns3-oR-JPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="76"/>
+            <point key="canvasLocation" x="3576.811594202899" y="75.669642857142847"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pLg-ba-JXb">
@@ -99,12 +145,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AYS-cj-pWE" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qRN-bV-N5A">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="isv-5n-FxU"/>
-                        <segue destination="pAs-Rt-wxF" kind="relationship" relationship="viewControllers" id="2k4-c8-vbE"/>
+                        <segue destination="aGF-uO-a8l" kind="relationship" relationship="viewControllers" id="2lg-cQ-dMp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdh-jo-Iul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,6 +160,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

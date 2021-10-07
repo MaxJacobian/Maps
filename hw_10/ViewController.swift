@@ -50,6 +50,9 @@ class ViewController: UIViewController{
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestWhenInUseAuthorization()
         locManager.startUpdatingLocation()
+    
+        mapView.showsUserLocation = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
